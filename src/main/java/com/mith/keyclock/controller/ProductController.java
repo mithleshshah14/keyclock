@@ -1,12 +1,12 @@
 package com.mith.keyclock.controller;
 
 import com.mith.keyclock.dto.Product;
+import com.mith.keyclock.response.ProductResponse;
 import com.mith.keyclock.service.ProductService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author mithl
@@ -27,6 +27,11 @@ public class ProductController {
     @PostMapping("/addProduct")
     public ResponseEntity<String> addProduct(@RequestBody Product product) {
         return ResponseEntity.ok(productService.addProduct(product));
+    }
+
+    @GetMapping("/getProduct/all")
+    public ResponseEntity<List<ProductResponse>> getProduct() {
+        return ResponseEntity.ok(productService.getProducts());
     }
 
 }

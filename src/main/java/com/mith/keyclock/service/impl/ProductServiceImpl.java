@@ -4,8 +4,12 @@ import com.mith.keyclock.dto.Product;
 import com.mith.keyclock.entity.ProductEntity;
 import com.mith.keyclock.mapper.ProductMapper;
 import com.mith.keyclock.repository.ProductRepository;
+import com.mith.keyclock.response.ProductResponse;
 import com.mith.keyclock.service.ProductService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * @author mithl
@@ -28,5 +32,11 @@ public class ProductServiceImpl implements ProductService {
         ProductEntity productEntity = productMapper.convertProduct(product);
         productRepository.save(productEntity);
         return "Product Created successfully";
+    }
+
+    @Override
+    public List<ProductResponse> getProducts() {
+        List<ProductEntity> productEntityList = productRepository.findAll();
+        return productEntityList.stream().map(productMapper::entityToResponse).collect(Collectors.toList());
     }
 }
