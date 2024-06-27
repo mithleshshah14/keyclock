@@ -3,6 +3,7 @@ package com.mith.keyclock.mapper;
 import com.mith.keyclock.dto.Product;
 import com.mith.keyclock.entity.ProductEntity;
 import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 /**
  * @author mithl
@@ -11,6 +12,8 @@ import org.mapstruct.Mapper;
  */
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
+
+    ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
     ProductEntity convertProduct(Product product);
 

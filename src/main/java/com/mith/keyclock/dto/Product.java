@@ -1,6 +1,7 @@
 package com.mith.keyclock.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,14 +13,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Product {
 
-    private String name;
+    public String name;
 
-    private double price;
+    public double price;
 
-    private String styleCode;
+    public String styleCode;
 
-    private String type;
+    public String type;
 
 }
