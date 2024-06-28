@@ -1,6 +1,6 @@
 package com.mith.keyclock.service.impl;
 
-import com.mith.keyclock.dto.Product;
+import com.mith.keyclock.dto.ProductDTO;
 import com.mith.keyclock.entity.ProductEntity;
 import com.mith.keyclock.mapper.ProductMapper;
 import com.mith.keyclock.repository.ProductRepository;
@@ -28,8 +28,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public String addProduct(Product product) {
-        ProductEntity productEntity = productMapper.convertProduct(product);
+    public String addProduct(ProductDTO productDTO) {
+        ProductEntity productEntity = productMapper.convertProduct(productDTO);
         productRepository.save(productEntity);
         return "Product Created successfully";
     }

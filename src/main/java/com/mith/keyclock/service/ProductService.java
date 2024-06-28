@@ -1,6 +1,6 @@
 package com.mith.keyclock.service;
 
-import com.mith.keyclock.dto.Product;
+import com.mith.keyclock.dto.ProductDTO;
 import com.mith.keyclock.response.ProductResponse;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +14,6 @@ import java.util.List;
 @Service
 public interface ProductService {
 
-    String addProduct(Product product);
+    String addProduct(ProductDTO productDTO);
     List<ProductResponse> getProducts();
 }

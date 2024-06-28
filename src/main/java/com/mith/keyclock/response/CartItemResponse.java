@@ -1,27 +1,26 @@
-package com.mith.keyclock.dto;
+package com.mith.keyclock.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 /**
  * @author mithl
- * @date 26-06-2024
+ * @date 28-06-2024
  * @email mithleshshah84@gmail.com
  */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Product {
+public class CartItemResponse {
 
-    public String name;
+    private UUID productId;
 
-    public double price;
+    private String productName;
 
-    public String styleCode;
-
-    public String type;
-
+    private int quantity;
 }

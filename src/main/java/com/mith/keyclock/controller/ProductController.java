@@ -1,6 +1,6 @@
 package com.mith.keyclock.controller;
 
-import com.mith.keyclock.dto.Product;
+import com.mith.keyclock.dto.ProductDTO;
 import com.mith.keyclock.response.ProductResponse;
 import com.mith.keyclock.service.ProductService;
 import org.springframework.http.ResponseEntity;
@@ -25,8 +25,8 @@ public class ProductController {
 
 
     @PostMapping("/addProduct")
-    public ResponseEntity<String> addProduct(@RequestBody Product product) {
-        return ResponseEntity.ok(productService.addProduct(product));
+    public ResponseEntity<String> addProduct(@RequestBody ProductDTO productDTO) {
+        return ResponseEntity.ok(productService.addProduct(productDTO));
     }
 
     @GetMapping("/getProduct/all")

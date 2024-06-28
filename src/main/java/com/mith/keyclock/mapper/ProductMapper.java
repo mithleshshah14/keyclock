@@ -1,6 +1,6 @@
 package com.mith.keyclock.mapper;
 
-import com.mith.keyclock.dto.Product;
+import com.mith.keyclock.dto.ProductDTO;
 import com.mith.keyclock.entity.ProductEntity;
 import com.mith.keyclock.response.ProductResponse;
 import org.mapstruct.Mapper;
@@ -16,7 +16,7 @@ public interface ProductMapper {
 
     ProductMapper INSTANCE = Mappers.getMapper(ProductMapper.class);
 
-    ProductEntity convertProduct(Product product);
+    ProductEntity convertProduct(ProductDTO productDTO);
 
     ProductResponse entityToResponse(ProductEntity productEntity);
 
